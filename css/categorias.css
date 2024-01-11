@@ -1,0 +1,92 @@
+
+:root {
+    --bg-color-pink-darkBlue: #FCD4D6;
+    --bg-color-pink-lightBlue: #FCD4D6;
+    --bg-color-red-lightBlue: #B00D13;
+    --bg-color-red-orange: #B00D13;
+    --bg-color-white-darkBlue: #fff;
+    --color-bg1: rgba(253, 253, 253, 0.7);
+    --font-red-white: #B00D13;
+}
+
+h2:not(:first-child) {
+    margin-top: 5rem;
+}
+
+.dark-theme {
+    --bg-color-pink-darkBlue: #1f2641;
+    --bg-color-pink-lightBlue: #6c63ff;
+    --bg-color-red-lightBlue: #6c63ff;
+    --bg-color-red-orange: #f75842;
+    --bg-color-white-darkBlue: #424890;
+    --color-bg1: #2e3267;
+    --font-red-white: #FFF;
+}
+
+
+/*=============== NAVBAR =============*/
+nav {
+    background-color: var(--bg-color-red-lightBlue);
+}
+
+.nav__container {
+    align-items: center; 
+    background-color: var(--bg-color-red-lightBlue);
+    display: flex;
+    height: 100%;
+    justify-content: space-between;
+}
+
+.contact__container {
+    background: var(--color-bg1);
+    border-radius: 1rem;
+    display: grid;
+    gap: 4rem;
+    grid-template-columns: 40% 60%;
+    height: 30rem;
+    margin: 7rem auto;
+    padding: 4rem;
+}
+
+
+/*=============== COURSES ============*/
+.courses {
+    background-image: none;
+    padding-top: 10rem;
+}
+
+.course img {
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+}
+
+.banks-section {
+    padding-top: 0;
+}
+
+.course__info:hover {
+    background-image: var(--textured-bg);
+}
+
+.logistic-section {
+    background-image: var(--textured-bg);
+}
+
+.crs-section {
+    background-image: var(--textured-bg);
+}
+
+
+/*=============== FOOTER ============*/
+.footer__2 ul li a {
+    color: var(--font-color-socials);
+}
+
+.footer {
+    padding-top: 3rem;
+}
+
+.footer__copyright {
+    margin-top: 4rem;
+}

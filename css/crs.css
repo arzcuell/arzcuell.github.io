@@ -1,0 +1,106 @@
+
+:root {
+    --bg-color-red-lightBlue: #B00D13;
+}
+
+.dark-theme {
+    --bg-color-red-lightBlue: #6c63ff;
+}
+
+main {
+    margin: auto;
+    max-width: 80vw;
+}
+
+h2 {
+    font-size: 3rem;
+    margin-top: 7rem;
+}
+
+h4 {
+    font-size: 1.5rem;
+}
+
+nav {
+    background-color: var(--bg-color-red-lightBlue);
+}
+
+ol {
+    margin: 3rem 0;
+}
+
+article {
+    margin: 5rem 0;
+}
+
+table {
+    border-collapse: collapse;
+    font-size: 1.6rem;
+    margin: 4rem auto;
+    width: 50vw;
+    white-space: nowrap;
+}
+
+th, td {
+    border: 1px solid black;
+    padding: 8px;
+    text-align: center;
+}
+
+th {
+    background-color: var(--bg-color-red-lightBlue);
+    color: var(--color-white)
+}
+
+span {
+    font-weight: bolder;
+}
+.nav__container {
+    align-items: center; 
+    background-color: var(--bg-color-red-lightBlue);
+    display: flex;
+    height: 100%;
+    justify-content: space-between;
+}
+
+.contact__container {
+    background: var(--color-bg1);
+    border-radius: 1rem;
+    display: grid;
+    gap: 4rem;
+    grid-template-columns: 40% 60%;
+    height: 30rem;
+    margin: 7rem auto;
+    padding: 4rem;
+}
+
+.cintillo {
+    margin:auto;
+    max-width: 70vw;
+}
+
+.crs > img {
+    margin-bottom: 4rem;;
+}
+
+.crs__info p{
+    font-size: 1.3rem;
+    margin: 1rem 0;
+    max-width: 70vw;
+}
+
+.crs__info li {
+    list-style-type: disc;
+    margin-left: 3rem;
+    font-size: 1.3rem;
+}
+
+@media screen and (max-width: 1024px) {
+    table {
+        display: block;
+        font-size: 1rem;
+        margin: auto;
+        overflow-x: auto;
+        width: 100%;
+}
+}
