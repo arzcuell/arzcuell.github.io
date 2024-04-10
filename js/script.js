@@ -1,5 +1,7 @@
-window.addEventListener('DOMContentLoaded', ()=> {
+// ++++++++++++++++++++++++++++++++++++++++++++++ NAV AND FOOTER FOR EVERYBODY +++++++++++++++++++++++++++++++++++++++++
 
+
+window.addEventListener('DOMContentLoaded', ()=> {
 
 let body = document.querySelector('body');
 let nav = document.createElement('nav');
@@ -23,80 +25,101 @@ nav.innerHTML=`
         <button title="Tema claro/oscuro" id="toggle-menu-btn" type="button"><i class="uil uil-moon"></i></button>
         <button title="Abrir menú" id="open-menu-btn"><i class="uil uil-bars"></i></button>
         <button title="Cerrar menú" id="close-menu-btn"><i class="uil uil-multiply"></i></button>
-
+        
     </div>
-`
-body.appendChild(nav)
-
+        `
+    body.appendChild(nav)
+        
 let footer = document.createElement('footer');
 footer.innerHTML = `
-<footer class="footer">
+    <footer class="footer">
+                
+        <section class="container footer__container">
             
-<section class="container footer__container">
-    
-    <div class="footer__1">
-        <a href="index.html" class="footer__logo"><h4>UAD</h4></a>
-        <p>Portal destinado a la capacitación del recurso humano adscrito al área administrativa de las Unidades Administradoras Desconcentradas</p>
-    </div>
+            <div class="footer__1">
+                <a href="index.html" class="footer__logo"><h4>UAD</h4></a>
+                <p id="responsive-text">Sitio Web destinado a la capacitación del recurso humano adscrito al área administrativa de las Unidades Administradoras Desconcentradas</p>
+            </div>
 
-    <div class="footer__2">
-        <h4>Enlaces</h4>
-        <ul class="permalinks">
-            <li><a href="index.html">Inicio</a></li>
-            <li><a href="acerca.html">Acerca</a></li>
-            <li><a href="categorias.html">Categorías</a></li>
-            <li><a href="contacto.html">Contacto</a></li>
-        </ul>
-    </div>
+            <div class="footer__2">
+                <h4>Enlaces</h4>
+                <ul class="permalinks">
+                    <li><a href="index.html">Inicio</a></li>
+                    <li><a href="acerca.html">Acerca</a></li>
+                    <li><a href="categorias.html">Categorías</a></li>
+                    <li><a href="contacto.html">Contacto</a></li>
+                </ul>
+            </div>
 
-    <div class="footer__4">
-        
-        <h4>Contáctenos</h4>
-        
-        <div>
-            <p>+58-412-238.5742</p>
-            <p>+58-212-709.4094</p>
-            <p>uad-seniat@proton.me</p>
-        </div>
-        
-        <ul class="footer__socials">
-            <li><a href="mailto:asiste@seniat.gob.ve" title="Correo"><i class="uil uil-envelope-alt"></i></a></li>
-            <li><a href="https://www.x.com/Seniat_Oficial" title="X.com"><i class="fa-brands fa-x-twitter"></i></a></li>
-            <li><a href="https://www.instagram.com/seniat_oficial/" title="Instagram"><i class="uil uil-instagram"></i></a></li>
-            <li><a href="https://www.youtube.com/noticiasseniat" title="Youtube"><i class="uil uil-youtube"></i></a></li>
-        </ul>
+            <div class="footer__4">
+                
+                <h4>Contáctenos</h4>
+                
+                <div>
+                    <p>+58-412-238.5742</p>
+                    <p>+58-212-709.4094</p>
+                    <p>uad-seniat@proton.me</p>
+                </div>
+                
+                <ul class="footer__socials">
+                    <li><a href="mailto:asiste@seniat.gob.ve" title="Correo"><i class="uil uil-envelope-alt"></i></a></li>
+                    <li><a href="https://www.x.com/Seniat_Oficial" title="X.com"><i class="fa-brands fa-x-twitter"></i></a></li>
+                    <li><a href="https://www.instagram.com/seniat_oficial/" title="Instagram"><i class="uil uil-instagram"></i></a></li>
+                    <li><a href="https://www.youtube.com/noticiasseniat" title="Youtube"><i class="uil uil-youtube"></i></a></li>
+                </ul>
 
-    </div>
+            </div>
 
-    <div class="footer__5">
+            <div class="footer__5">
 
-        <div>
-            <img src="./assets/images/undraw_mailbox_re_dvds.svg" alt="contacto">
-        </div>
+                <div>
+                    <img src="./assets/images/undraw_mailbox_re_dvds.svg" alt="contacto" />
+                </div>
 
-    </div>
+            </div>
 
-</section>
+        </section>
 
-<section class="footer__copyright">
-    
-    <small>&copy; 2024 | Servicio Nacional Integrado de Administración Aduanera y Tributaria | G-20000303-0</small>
+        <section class="footer__copyright">
+            
+            <small>&copy; 2024 | Servicio Nacional Integrado de Administración Aduanera y Tributaria | G-20000303-0</small>
 
-</section>
+        </section>
 
-</footer>
+    </footer>
 `
-
 body.appendChild(footer)
 
 
 
-// change navbar style on scroll
+// ++++++++++++++++++++++++++++++++++++++++++++++ CHANGE RESPONSIVE TEXT ON FOOTER +++++++++++++++++++++++++++++++++++++++++
+
+const responsiveText = document.getElementById('responsive-text');
+const updateResponsiveText = () => {
+    if(window.innerWidth < 1024) {
+        responsiveText.textContent = 'Sitio Web destinado a la capacitación de las Unidades Administradoras Desconcentradas';
+    } else {
+        responsiveText.textContent = 'Sitio Web destinado a la capacitación del recurso humano adscrito al área administrativa de las Unidades Administradoras Desconcentradas';
+    }
+};
+
+// Llamar a updateResponsiveText al cargar la página y al cambiar el tamaño de la ventana
+updateResponsiveText();
+window.addEventListener('resize', updateResponsiveText);
+
+
+
+
+
+
+// ++++++++++++++++++++++++++++++++++++++++++++++ CHANGE NAVBAR STYLE ON SCROLL +++++++++++++++++++++++++++++++++++++++++
+
 window.addEventListener('scroll', () => {
     document.querySelector('nav').classList.toggle('window-scroll',window.scrollY>0);
 });
 
-//show or hide faq answer
+// ++++++++++++++++++++++++++++++++++++++++++++++ SHOW OR HIDE FAQ ANSWER +++++++++++++++++++++++++++++++++++++++++
+
 const faqs = document.querySelectorAll('.faq');
 
 faqs.forEach(faq => {
@@ -126,7 +149,8 @@ faqs.forEach(faq => {
     })
 });
 
-/* nav menu on screens less than 1024px*/
+// ++++++++++++++++++++++++++++++++++++++++++++++ NAV MENU ON SCREENS LESS THAN 1024PX +++++++++++++++++++++++++++++++++++++++++
+
 const menu = document.querySelector('.nav__menu');
 const menuBtn = document.querySelector('#open-menu-btn');
 const closeBtn = document.querySelector('#close-menu-btn');
@@ -146,7 +170,8 @@ const closeNav = () => {
 
 closeBtn.addEventListener('click', closeNav);
 
-//dark-theme
+// ++++++++++++++++++++++++++++++++++++++++++++++ DARK THEME MANAGE +++++++++++++++++++++++++++++++++++++++++
+
 const icon = document.getElementById('toggle-menu-btn');
 
 icon.onclick = function() {
@@ -170,16 +195,27 @@ if(localStorage.getItem('dark-theme') === 'true') {
     icon.innerHTML = "<i class='uil uil-moon'></i>";
 };
 
-// Show popup if the localStorage item does not exist
+// ++++++++++++++++++++++++++++++++++++++++++++++ SHOW WELCOME POPUP IF LOCAL STORAGE ITEM DOES NOT EXIST +++++++++++++++++++++++++++++++++++++++++
+
 window.addEventListener('load', function() {
     setTimeout(function() {
-        // Your code to open the modal goes here
-        if (!getLocalStorage("popupClosed")) {
-            document.querySelector(".popup").style.display = "block";
-            document.body.style.overflow = "hidden";
-        }
-    }, 1000); // 1000 milliseconds = 1 seconds
+        // Verificar ancho de pantalla para no mostrarlo en resoluciones < 600px
+        executeIfScreenWidthGreaterThan768(function() {
+            if (!getLocalStorage("popupClosed")) {
+                document.querySelector(".popup").style.display = "block";
+                document.body.style.overflow = "hidden";
+            }
+        });
+    }, 1000);
 });
+
+// ...
+
+function executeIfScreenWidthGreaterThan768(callback) {
+    if (window.innerWidth > 600) {
+        callback();
+    }
+}
 
 // Listen for click on the close button
 document.querySelector(".close-btn").addEventListener("click", function() {
@@ -223,12 +259,13 @@ const minimalBrowserVersions = {
     opera: 33,
 };
 
-// Function to get the user's browser and version
+// ++++++++++++++++++++++++++++++++++++++++++++++ FUNCTION BROWSER VERSION +++++++++++++++++++++++++++++++++++++++++
+
 function getBrowserInfo() {
     const userAgent = navigator.userAgent;
     let M = userAgent.match(/(opera|chrome|safari|firefox|msie|trident(?=\/))\/?\s*(\d+)/i) || [];
     if (/trident/i.test(M[1])) {
-        const temp = /\brv[ :]+(\d+)/g.exec(userAgent) || [];
+        const temp = /\brv[ :]+(\d+)/gi.exec(userAgent) || [];
         return {name: 'IE', version: (temp[1] || '')};
     }
     if (M[1] === 'Chrome') {
@@ -240,12 +277,13 @@ function getBrowserInfo() {
     return {name: M[0], version: M[1]};
 }
 
-// Function to show the modal if the browser does not meet the minimum version
+// ++++++++++++++++++++++++++++++++++++++++++++++ FUNCTION MINIMUM BROWSER VERSION +++++++++++++++++++++++++++++++++++++++++
+
 function checkBrowserVersion() {
     const browserInfo = getBrowserInfo();
     const browserName = browserInfo.name.toLowerCase();
     const browserVersion = parseInt(browserInfo.version);
-
+    
     if (browserName in minimalBrowserVersions && browserVersion < minimalBrowserVersions[browserName]) {
         // Show the modal with the browser update information
         alert(`Por favor actualice su navegador ${browserName} a la versión ${minimalBrowserVersions[browserName]} o superior para una mejor experiencia en el Sitio Web.`);
@@ -253,18 +291,70 @@ function checkBrowserVersion() {
 }
 checkBrowserVersion();
 
+})
+
+// ++++++++++++++++++++++++++++++++++++++++++++++ DOWNLOAD FILES SECTION +++++++++++++++++++++++++++++++++++++++++
 
 
-window.addEventListener('load', function() {
-    const loadingScreen = document.getElementById('loading-screen');
-    loadingScreen.classList.add('fade-out');
+function downloadFile(fileUrl) {
+    if (fileUrl) {
+        const link = document.createElement('a');
+        link.href = fileUrl;
+        link.download = fileUrl.substr(fileUrl.lastIndexOf('/') + 1);
+        document.body.appendChild(link);
+        link.click();
+        document.body.removeChild(link);
+    } else {
+        console.error('Error obteniendo el archivo, por favor comuníquese con el administrador.');
+    }
+}
+
+document.querySelectorAll('.download-btn').forEach(button => {
+    button.addEventListener('click', function() {
+        const fileUrl = this.parentElement.getAttribute('data-file-url');
+        downloadFile(fileUrl);
+    });
 });
 
 
-})
 
-  // Establecer tamaño máximo de alto y ancho en pixels del textarea de Contacto.html
-  document.getElementById("Message").style.maxHeight = "150px";
-  document.getElementById("Message").style.minHeight = "150px";
-  document.getElementById("Message").style.maxWidth = "100%";
-  document.getElementById("Message").style.minWidth = "100%";
+// ++++++++++++++++++++++++++++++++++++++++++++++ FUNCTION TO SHOW THE SPLASH SCREEN +++++++++++++++++++++++++++++++++++++++++
+
+function showLoadingScreen() {
+    const loadingScreen = document.getElementById('loading-screen');
+    loadingScreen.style.display = 'flex';
+}
+
+// Function to hide the splash screen
+function hideLoadingScreen() {
+    const loadingScreen = document.getElementById('loading-screen');
+    loadingScreen.style.display = 'none';
+}
+
+// Call the showLoadingScreen function when the page starts loading
+document.addEventListener('DOMContentLoaded', showLoadingScreen);
+
+// Call the hideLoadingScreen function when the page has fully loaded
+window.onload = hideLoadingScreen;
+
+
+
+
+// ++++++++++++++++++++++++++++++++++++++++++++++ SLICE FOR THE MODULES +++++++++++++++++++++++++++++++++++++++++
+var slideIndex = 1;
+showSlides(slideIndex);
+
+function plusSlides(n) {
+    showSlides(slideIndex += n);
+}
+
+function showSlides(n) {
+    var i;
+    var slides = document.getElementsByClassName("mySlides");
+    if (n > slides.length) {slideIndex = 1}
+    if (n < 1) {slideIndex = slides.length}
+    for (i = 0; i < slides.length; i++) {
+        slides[i].style.display = "none";
+    }
+    slides[slideIndex-1].style.display = "block";
+}
